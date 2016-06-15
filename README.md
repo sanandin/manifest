@@ -13,12 +13,13 @@ Steps:
 
 4. Configure for the Raspberry PI Target:- 
 
-         cd ${RPI_REPO}/raspberrypi2_base_dir
-         MACHINE=raspberrypi2 source oe-init-build-env
+          cd ${RPI_REPO}/raspberrypi2_base_dir
+          MACHINE=raspberrypi2 source oe-init-build-env
 
    This will place you in the "raspberrypi2_base/build " directory.
 
 5. Edit bblayers.conf File:-
+
          <path>/raspberrypi2_base_dir/meta-openembedded/meta-oe  \
          <path>/raspberrypi2_base_dir/meta-openembedded/meta-gnome  \
          <path>/raspberrypi2_base_dir/meta-raspberrypi \
