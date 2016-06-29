@@ -49,7 +49,7 @@ MACHINE_NAME="raspberrypi2"
 LOCAL_REPO_ROOT=`pwd`"/${PRODUCT_NAME}_repo"
 LOCAL_REPO="${LOCAL_REPO_ROOT}/${PRODUCT_NAME}"
 REMOTE_REPO_ROOT="https://github.com/hemanth-krishna"
-REMOTE_MANIFEST_REPONAME="manifest.git"
+REMOTE_MANIFEST_REPONAME="manifests.git"
 #REMOTE_MANIFEST_BRANCH="${PRODUCT_NAME}"
 REMOTE_MANIFEST_BRANCH="master"
 REMOTE_MANIFEST_NAME="${PRODUCT_NAME}.xml"
@@ -62,7 +62,7 @@ fi
 
 mkdir ${LOCAL_REPO_ROOT}
 cd ${LOCAL_REPO_ROOT}
-repo init -m  "${REMOTE_REPO_ROOT}/${REMOTE_MANIFEST_REPONAME}" \
+repo init -u "${REMOTE_REPO_ROOT}/${REMOTE_MANIFEST_REPONAME}" \
           --manifest-branch="${REMOTE_MANIFEST_BRANCH}" \
           --manifest-name="${REMOTE_MANIFEST_NAME}"
 
@@ -73,7 +73,7 @@ repo sync
 
 ```shell
 cd ${LOCAL_REPO}
-MACHINE=raspberrypi2 source oe-init-build-env "build_${PRODUCT_NAME}"
+MACHINE=${MACHINE_NAME} source oe-init-build-env "build_${PRODUCT_NAME}"
 
 # edit the bblayers.conf file to add on these yocto layers
 
@@ -86,10 +86,10 @@ echo \"         ${LOCAL_REPO}/meta-ui                       \\ \"
 
 ### Build using the bitbake command
 ```shell
-MACHINE=${MACHINE_NAME} bitbake rpi-ui-image"
+MACHINE=${MACHINE_NAME} bitbake rpi-ui-image
 ```
 
-### Launch the applciation on the target after flashing the image nd booting up
+### Launch the applciation on the target after flashing the image and booting up
 ```shell
 firefox /usr/bin/videodemo/index.html &
 ```
