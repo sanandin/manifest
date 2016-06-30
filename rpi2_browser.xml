@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="yocto"
+           fetch="git://git.yoctoproject.org" />
+
+  <remote  name="openembedded"
+           fetch="git://git.openembedded.org" />
+
+  <remote  name="github"
+           fetch="git://github.com" />
+
+  <default sync-j="4" />
+
+  <project path="rpi2_browser"                    remote="yocto"        name="poky.git"                    revision="krogoth" />
+  <project path="rpi2_browser/openembedded-core"  remote="openembedded" name="openembedded-core.git"       revision="krogoth" />
+  <project path="rpi2_browser/meta-openembedded"  remote="openembedded" name="meta-openembedded.git"       revision="krogoth" />
+  <!-- meta-raspberrypi commit at point of writing this file: 8a21c1dda6150ae2596f3932ffbc6cb317ebcdf8                       -->
+  <project path="rpi2_browser/meta-raspberrypi"   remote="yocto"        name="meta-raspberrypi.git"        revision="master"  />
+  <project path="rpi2_browser/meta-browser"       remote="github"       name="OSSystems/meta-browser.git"  revision="master"  />
+  <project path="rpi2_browser/meta-ui"            remote="github"       name="sanandin/meta-ui.git"        revision="master"  />
+
+</manifest>
