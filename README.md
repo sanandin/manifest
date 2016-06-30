@@ -5,7 +5,7 @@ Steps:
 
 2. Repo init:-
         
-         repo init  -m  https://github.com/sanandin/manifest.git  --manifest-branch=master --manifest-name=manifest.xml
+         repo init  -m  https://github.com/sanandin/manifests.git  --manifest-branch=master --manifest-name=manifest.xml
   
 3. To Do repo sync:-
           
